@@ -14,15 +14,7 @@ public class Logic {
 			return false;
 		return stu.isMe(sid, pw);
 	}
-	public static boolean isAllPass(int sid){
-		Cr_source_service c_db=Cr_source_fac.cr_source();
-		crList=c_db.getCourseRecords(sid);
-		for(CourseRecord cr: crList){
-			if (!cr.isPass())
-				return false;
-		}
-		return true;
-	}
+	
 	public static List<CourseRecord> getCrList(){
 		if(null==crList){
 			try {
@@ -33,5 +25,15 @@ public class Logic {
 			}
 		}
 		return crList;
+	}
+
+	public static boolean isAllPass(int sid) {
+		Cr_source_service c_db = Cr_source_fac.cr_source();
+		crList = c_db.getCourseRecords(sid);
+		for (CourseRecord cr : crList) {
+			if (!cr.isPass())
+				return false;
+		}
+		return true;
 	}
 }

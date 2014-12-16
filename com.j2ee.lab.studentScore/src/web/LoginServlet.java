@@ -33,31 +33,33 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.setContentType("text/html");
-//		PrintWriter out = response.getWriter();
-//		out.println("<html><body>should not reach here!<body></html>");
-		//cope with login or show the information directly
-		HttpSession session=request.getSession();
-		if(session.isNew()){
-			session.setAttribute("hasLogin",false);
+		// response.setContentType("text/html");
+		// PrintWriter out = response.getWriter();
+		// out.println("<html><body>should not reach here!<body></html>");
+		// cope with login or show the information directly
+		HttpSession session = request.getSession();
+		if (session.isNew()) {
+			session.setAttribute("hasLogin", false);
 			loginJsp(request, response);
-		}else{
-			if(null==session.getAttribute("hasLogin")){
-				session.setAttribute("hasLogin",false);
+		} else {
+			if (null == session.getAttribute("hasLogin")) {
+				session.setAttribute("hasLogin", false);
 			}
-			boolean hasLogin=(boolean) session.getAttribute("hasLogin");
-			if(!hasLogin){
+			boolean hasLogin = (boolean) session.getAttribute("hasLogin");
+			if (!hasLogin) {
 				loginJsp(request, response);
-			}else{
-				int sid=(int) session.getAttribute("sid");
+			} else {
+				int sid = (int) session.getAttribute("sid");
 				request.setAttribute("sid", sid);
-				RequestDispatcher view = request.getRequestDispatcher("stuInfoServlet");
+				RequestDispatcher view = request
+						.getRequestDispatcher("stuInfoServlet");
 				view.forward(request, response);
 			}
 		}
 	}
+
 	private void loginJsp(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException{
+			HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher view = request.getRequestDispatcher("login.jsp");
 		view.forward(request, response);
 	}
@@ -69,19 +71,25 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.setContentType("text/html");
+		// response.setContentType("text/html");
 		String idStr = request.getParameter("sid");
 		int sid = Integer.valueOf(idStr);
 		String pw = request.getParameter("spw");
-		boolean canlog = Logic.canLog(sid, pw);
+
+		// for file implementation of data
+		String path = this.getServletContext().getRealPath("/");
+		RootPath.set(path);
+
+		boolean canlog = Logic.canLog(sid, pw);// filepath
 		if (!canlog) {
 			RequestDispatcher view = request.getRequestDispatcher("wrong.jsp");
 			view.forward(request, response);
 		} else {
-			HttpSession session=request.getSession();
+			HttpSession session = request.getSession();
 			session.setAttribute("sid", sid);
-			session.setAttribute("hasLogin",true);
-			RequestDispatcher view = request.getRequestDispatcher("stuInfoServlet");
+			session.setAttribute("hasLogin", true);
+			RequestDispatcher view = request
+					.getRequestDispatcher("stuInfoServlet");
 			view.forward(request, response);
 		}
 	}

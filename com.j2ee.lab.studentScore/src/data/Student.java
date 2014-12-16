@@ -13,9 +13,9 @@ public class Student {
 	public boolean isMe(int sid, String pw){
 		return sid==this.sid && this.pw.equals(pw);
 	}
-//	public int getId(){
-//		return sid;
-//	}
+	public int getId(){
+		return sid;
+	}
 	public String getName(){
 		return sname;
 	}

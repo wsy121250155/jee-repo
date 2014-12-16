@@ -25,4 +25,16 @@ public class CourseRecord {
 	public String toString(){
 		return ""+cid+"\t"+cname+"\t"+score;
 	}
+	
+	//for the file implementaton of data
+	private int sid;
+	public CourseRecord(int cid, String cname, int score, int sid){
+		this.cname=cname;
+		this.cid=cid;
+		this.score=score;
+		this.sid=sid;
+	}
+	public int getSid(){
+		return sid;
+	}
 }

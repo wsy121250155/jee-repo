@@ -55,20 +55,22 @@ public class StuInfoServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF8");
 		HttpSession session=request.getSession();
 		int sid=(int)session.getAttribute("sid");
-//		PrintWriter out = response.getWriter();
-//		out.println("<html><body>show info-post:"+sid+"<body></html>");
-		if(Logic.isAllPass(sid)){
+		
+		//for file implementation of data
+		String path = this.getServletContext().getRealPath("/");
+		RootPath.set(path);
+		
+		if(Logic.isAllPass(sid)){//filepath
 //			session.setAttribute("courseList", Logic.getCrList());
 //			RequestDispatcher view=request.getRequestDispatcher("common.jsp");
 //			view.forward(request, response);
 			PrintWriter out = response.getWriter();
 			out.println("<html><body>");
+			out.println("your course information:");
+			int i=0;
 			for(CourseRecord cr:Logic.getCrList()){
-				out.println("<p>"+cr.toString()+"</p>");
+				out.println("<p>"+(++i)+"	"+cr.toString()+"</p>");
 			}
-			String path = this.getServletContext().getRealPath("/");
-			RootPath.set(path);
-			out.println(FileTest.get());
 			out.println("</body></html>");
 		}else{
 //			RequestDispatcher view=request.getRequestDispatcher("attention.jsp");
