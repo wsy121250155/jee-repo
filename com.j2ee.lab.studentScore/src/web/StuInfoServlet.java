@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import data.CourseRecord;
 import dataService.Logic;
+import fileConnector.FileTest;
+import fileConnector.RootPath;
 
 /**
  * Servlet implementation class StuInfoServlet
@@ -64,6 +66,9 @@ public class StuInfoServlet extends HttpServlet {
 			for(CourseRecord cr:Logic.getCrList()){
 				out.println("<p>"+cr.toString()+"</p>");
 			}
+			String path = this.getServletContext().getRealPath("/");
+			RootPath.set(path);
+			out.println(FileTest.get());
 			out.println("</body></html>");
 		}else{
 //			RequestDispatcher view=request.getRequestDispatcher("attention.jsp");
