@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import data.CourseRecord;
-import dbConnnector.Logic;
+import dataService.Logic;
 
 /**
  * Servlet implementation class StuInfoServlet

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dbConnnector.Logic;
+import dataService.Logic;
 
 /**
  * Servlet implementation class LoginServlet
