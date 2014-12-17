@@ -11,7 +11,7 @@ import dataService.Stu_source_service;
 public class Student_file implements Stu_source_service {
 
 	public Student_file() {
-		String path = RootPath.get() + "/stu_info.txt";
+		String path = RootPath.get() + "/filedata/stu_info.txt";
 		BufferedReader reader = null;
 		stu_list=new ArrayList<Student>();
 		try {

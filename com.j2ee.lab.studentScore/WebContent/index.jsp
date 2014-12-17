@@ -4,23 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="css/global.css" rel="stylesheet" type="text/css"> 
 <title>java-ee</title>
 </head>
 <body>
-
+<div>
 <h1>student score query</h1>
 <p>course：j2ee</p>
 <p>times: second</p>
 <p>description: 学生登录，跟据学生的ID，查询当前课程成绩（使用文件）</p>
-<ul>
-<li>并根据成绩，确定返回结果</li>
-<li>有不及格课程：警示页面</li>
-<li>正常结果：标准页面</li>
-<li>未知的学生ID：错误页面</li>
-</ul>
+<p>并根据成绩，确定返回结果:</p>
+<table>
+<tr><td>有不及格课程：</td><td>警示页面</td></tr>
+<tr><td>正常结果：</td><td>标准页面</td></tr>
+<tr><td>未知的学生ID：</td><td>错误页面</td></tr>
+</table>
 
 
 <a href="loginServlet">start from here</a>
-
+</div>
 </body>
 </html>

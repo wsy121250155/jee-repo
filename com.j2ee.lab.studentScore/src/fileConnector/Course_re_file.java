@@ -14,7 +14,7 @@ public class Course_re_file implements Cr_source_service {
 	private List<CourseRecord> cr_list;
 	
 	public Course_re_file(){
-		String path = RootPath.get() + "/course_re.txt";
+		String path = RootPath.get() + "/filedata/course_re.txt";
 		BufferedReader reader = null;
 		cr_list=new ArrayList<CourseRecord>();
 		try {
