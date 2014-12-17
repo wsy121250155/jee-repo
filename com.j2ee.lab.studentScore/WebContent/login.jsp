@@ -10,8 +10,10 @@
 	<p>student login</p>
 	
 	<form action="loginServlet" method="post">
-		id:<input type="text" name="sid" /> 
-		password:<input type="text" name="spw" />
+		<table>
+		<tr><td>id:</td><td><input type="text" name="sid" /></td></tr>
+		<tr><td>password:</td><td><input type="text" name="spw" /></td></tr>
+		</table>
 		<input type="submit" value="Submit" />
 	</form>
 	
