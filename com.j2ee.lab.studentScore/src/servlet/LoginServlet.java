@@ -1,14 +1,16 @@
-package web;
+package servlet;
 
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import listener.Stu_Session;
 import dataService.Logic;
 import fileConnector.RootPath;
 
@@ -88,6 +90,10 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("sid", sid);
 			session.setAttribute("hasLogin", true);
+			session.setAttribute("student", new Stu_Session(sid));
+			Cookie cookie_id=new Cookie("sid",idStr);
+			cookie_id.setMaxAge(60);
+			response.addCookie(cookie_id);
 			RequestDispatcher view = request
 					.getRequestDispatcher("stuInfoServlet");
 			view.forward(request, response);

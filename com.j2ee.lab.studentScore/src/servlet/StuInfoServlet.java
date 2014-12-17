@@ -1,12 +1,16 @@
-package web;
+package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import listener.Stu_Session;
 import data.CourseRecord;
 import dataService.Logic;
 import fileConnector.RootPath;
@@ -55,14 +59,35 @@ public class StuInfoServlet extends HttpServlet {
 		//for file implementation of data
 		String path = this.getServletContext().getRealPath("/");
 		RootPath.set(path);
+		PrintWriter out = response.getWriter();
+	
+		out.println("<!--");
+		out.println("servlet configeration test:");
+		Enumeration e=getServletConfig().getInitParameterNames();
+		while(e.hasMoreElements()){
+			Object o=e.nextElement();//注意：nextElement()方法返回的是object，但是e是Enumeration
+			out.println(o+"\t"+getServletConfig().getInitParameter((String)o));
+		}
+		out.println();
+		out.println("context init test:");
+		out.println(getServletContext().getInitParameter("db-source"));
+		out.println();
+		out.println("servlet context listener test:");
+		out.println("db-source:\t"+getServletContext().getAttribute("url"));
+		out.println("-->");
+		
+		out.println("<html><body>");
+		out.println("<p><a href=\"login.jsp\">log out</a></p>");
+		out.println();
+		out.println("<p>当前在线人数：");
+		out.println(Stu_Session.getNum()+"</p>");
+		out.println();
 		
 		if(Logic.isAllPass(sid)){//filepath
 //			session.setAttribute("courseList", Logic.getCrList());
 //			RequestDispatcher view=request.getRequestDispatcher("common.jsp");
 //			view.forward(request, response);
-			PrintWriter out = response.getWriter();
-			out.println("<html><body>");
-			out.println("your course information:");
+			out.println("<p>your course information:</p>");
 			int i=0;
 			out.println("<table>");
 			out.println("<tr><td>序号</td><td>课程号</td><td>课程名称</td><td>成绩</td></tr>");
@@ -70,12 +95,13 @@ public class StuInfoServlet extends HttpServlet {
 				out.println("<tr><td>"+(++i)+"</td><td>"+cr.getCid()+"</td>"+"<td>"+cr.getCname()+"</td>"+"</td>"+"<td>"+cr.getScore()+"</td>"+"</tr>");
 			}
 			out.println("</table>");
-			out.println("</body></html>");
+			
 		}else{
 //			RequestDispatcher view=request.getRequestDispatcher("attention.jsp");
 //			view.forward(request, response);
-			PrintWriter out = response.getWriter();
-			out.println("请注意：您有挂科！！！");
+			out.println("<p>请注意：您有挂科！！！</p>");
 		}
+		out.println("<p><a href=\"checkCookie\">test cookie</a></p>");
+		out.println("</body></html>");
 	}
 }
