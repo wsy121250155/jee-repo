@@ -66,7 +66,7 @@ public class StuInfoServlet extends HttpServlet {
 		out.println("servlet configeration test:");
 		Enumeration e=getServletConfig().getInitParameterNames();
 		while(e.hasMoreElements()){
-			Object o=e.nextElement();//注意：nextElement()方法返回的是object，但是e是Enumeration
+			Object o=e.nextElement();//娉ㄦ剰锛歯extElement()鏂规硶杩斿洖鐨勬槸object锛屼絾鏄痚鏄疎numeration
 			out.println(o+"\t"+getServletConfig().getInitParameter((String)o));
 		}
 		out.println();
@@ -101,7 +101,7 @@ public class StuInfoServlet extends HttpServlet {
 		}else{
 //			RequestDispatcher view=request.getRequestDispatcher("attention.jsp");
 //			view.forward(request, response);
-			out.println("<p>请注意：您有挂科！！！</p>");
+			out.println("<p>请注意，您有挂科！</p>");
 		}
 		out.println("<p><a href=\"checkCookie\">test cookie</a></p>");
 		out.println("</body></html>");

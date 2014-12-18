@@ -7,10 +7,5 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% 
-String sid=request.getParameter("sid");
-out.println("<h>Sorry, there is no user who has id-"+sid+" or your password is wrong!</h>");
-out.println("<p><a href=\"login.jsp\">Please try again!</a></p>");
-%>
 </body>
 </html>
