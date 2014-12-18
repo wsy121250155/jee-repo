@@ -33,6 +33,7 @@
     <servlet-name>checkCookie</servlet-name>
     <servlet-class>servlet.CheckCookieServlet</servlet-class>
   </servlet>
+  
   <listener>
     <listener-class>listener.MyServletContextListener</listener-class>
   </listener>

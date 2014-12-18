@@ -1,5 +1,10 @@
-div{
-	width:60%;
-	margin-left:auto; 
-	margin-right:auto;
+body {
+	font-size: 30px;
+	background: url(../picture/background.jpg) repeat center;
+}
+
+div {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
 }

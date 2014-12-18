@@ -1,0 +1,14 @@
+1.如果使用forward或者include什么的，则在它之前的printwriter。println（）中输出的东西都不会被返回给客户端。
+
+2.jsp标记：
+	<%  %>:scirptlet
+	<%= %>:expression
+	<%@ %>:directive
+	<%! %>:表示变量为jsp的局部变量，而不是service的局部变量
+	
+3.jsp中声明函数必须都是jsp的布局函数，而不是service的局部函数，即必须用〈%！%〉
+
+4.css 中background URL使用相对路径时，需要从本css出发开始写。
+
+5.区别servletContext（整个应用只有一个）和servlet，他们对应的初始化参数：servletContext configeration和
+servlet Configeration
