@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<link href="css/global.css" rel="stylesheet" type="text/css"> 
+<title>Student information</title>
 </head>
 <body>
-
+<div>
+<%
+out.println("<p>请注意，您有挂科！</p>");
+%>
+<div>
 </body>
 </html>

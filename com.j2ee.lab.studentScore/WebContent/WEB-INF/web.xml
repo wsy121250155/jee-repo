@@ -3,7 +3,7 @@
   <display-name>HeadFirstJspServletChap02</display-name>
   <context-param>
     <param-name>db-source</param-name>
-    <param-value>localhost:2003</param-value>
+    <param-value>jdbc:mysql://127.0.0.1:3306/jee</param-value>
   </context-param>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -33,12 +33,14 @@
     <servlet-name>checkCookie</servlet-name>
     <servlet-class>servlet.CheckCookieServlet</servlet-class>
   </servlet>
-  
   <listener>
     <listener-class>listener.MyServletContextListener</listener-class>
   </listener>
   <listener>
-  	<listener-class>listener.ExistingSessionCounter</listener-class>
+    <listener-class>listener.ExistingSessionCounter</listener-class>
+  </listener>
+  <listener>
+    <listener-class>listener.SessionAttiListener</listener-class>
   </listener>
   
   <session-config>

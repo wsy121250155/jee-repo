@@ -15,7 +15,7 @@ public class CourseRecord_db  implements Cr_source_service{
 	public List<CourseRecord> getCourseRecords(int sid) {
 		// TODO Auto-generated method stub
 		List<CourseRecord> reList=new ArrayList<CourseRecord>();
-		Connection connection=new Dbconnect().getConnection();
+		Connection connection=Dbconnect.getConnection();
 		try {
 			Statement statement=(Statement)connection.createStatement();
 			String sql=

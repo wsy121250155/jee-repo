@@ -1,7 +1,8 @@
 package fileConnector;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Student_file implements Stu_source_service {
 		BufferedReader reader = null;
 		stu_list=new ArrayList<Student>();
 		try {
-			reader = new BufferedReader(new FileReader(path));
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream(path),"UTF-8"));
 			String line;
 			int sid;
 			String name;

@@ -1,12 +1,12 @@
 package fileConnector;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import data.CourseRecord;
-
 import dataService.Cr_source_service;
 
 public class Course_re_file implements Cr_source_service {
@@ -18,7 +18,7 @@ public class Course_re_file implements Cr_source_service {
 		BufferedReader reader = null;
 		cr_list=new ArrayList<CourseRecord>();
 		try {
-			reader = new BufferedReader(new FileReader(path));
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream(path),"UTF-8"));
 			String line = reader.readLine();
 			int cid;
 			String name;

@@ -14,7 +14,7 @@ public class Student_db  implements Stu_source_service{
 	public Student getStudent(int sid) {
 		// TODO Auto-generated method stub
 		Student stu=null;
-		Connection connection=new Dbconnect().getConnection();
+		Connection connection=Dbconnect.getConnection();
 		try {
 			Statement statement=(Statement)connection.createStatement();
 			String sql="select * from students where sid="+sid;

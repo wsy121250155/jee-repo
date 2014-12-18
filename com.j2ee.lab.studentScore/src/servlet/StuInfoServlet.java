@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -99,9 +100,9 @@ public class StuInfoServlet extends HttpServlet {
 			out.println("</table>");
 			
 		}else{
-//			RequestDispatcher view=request.getRequestDispatcher("attention.jsp");
-//			view.forward(request, response);
-			out.println("<p>请注意，您有挂科！</p>");
+			RequestDispatcher view=request.getRequestDispatcher("attention.jsp");
+			view.forward(request, response);
+//			out.println("<p>请注意，您有挂科！</p>");
 		}
 		out.println("<p><a href=\"checkCookie\">test cookie</a></p>");
 		out.println("</body></html>");
