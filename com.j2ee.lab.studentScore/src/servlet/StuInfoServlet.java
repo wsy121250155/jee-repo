@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import listener.ExistingSessionCounter;
 import listener.Stu_Session;
 import data.CourseRecord;
 import dataService.Logic;
@@ -80,7 +81,8 @@ public class StuInfoServlet extends HttpServlet {
 		out.println("<p><a href=\"login.jsp\">log out</a></p>");
 		out.println();
 		out.println("<p>当前在线人数：");
-		out.println(Stu_Session.getNum()+"</p>");
+//		out.println(Stu_Session.getNum()+"</p>");
+		out.println(ExistingSessionCounter.getSessionNo()+"</p>");
 		out.println();
 		
 		if(Logic.isAllPass(sid)){//filepath

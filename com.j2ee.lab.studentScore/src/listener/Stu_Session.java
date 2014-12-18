@@ -25,7 +25,8 @@ public class Stu_Session implements HttpSessionBindingListener{
 	@Override
 	public void valueUnbound(HttpSessionBindingEvent arg0) {
 		// TODO Auto-generated method stub
-//		number--;
+//		如果一个session被绑定了一个同名的属性，那么前一个就会被顶掉，从而触发valueUnbound
+		number--;
 	}
 
 }

@@ -90,7 +90,9 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("sid", sid);
 			session.setAttribute("hasLogin", true);
+//			for HttpSessionBindingListener test:
 			session.setAttribute("student", new Stu_Session(sid));
+//			for more than one cookie test:
 			Cookie cookie_id=new Cookie("sid",idStr);
 			cookie_id.setMaxAge(60);
 			response.addCookie(cookie_id);
