@@ -16,6 +16,7 @@
 				out.println(ExistingSessionCounter.getSessionNo() + "</p>");
 				out.println("<p>请注意，您有挂科！</p>");
 			%>
+			<!-- <p>${ExistingSessionCounter.sessionCount}</p> --> 
 		</div>
 	</div>
 </body>
