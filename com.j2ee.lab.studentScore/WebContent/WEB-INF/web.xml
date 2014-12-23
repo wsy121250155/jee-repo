@@ -33,6 +33,11 @@
     <servlet-name>checkCookie</servlet-name>
     <servlet-class>servlet.CheckCookieServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>testBean</servlet-name>
+    <servlet-class>servlet.TestBeanServlet</servlet-class>
+  </servlet>
+  
   <listener>
     <listener-class>listener.MyServletContextListener</listener-class>
   </listener>
@@ -42,9 +47,11 @@
   <listener>
     <listener-class>listener.SessionAttiListener</listener-class>
   </listener>
+  
   <session-config>
     <session-timeout>1</session-timeout>
   </session-config>
+  
   <servlet-mapping>
     <servlet-name>loginServlet</servlet-name>
     <url-pattern>/loginServlet</url-pattern>
@@ -56,5 +63,9 @@
   <servlet-mapping>
     <servlet-name>checkCookie</servlet-name>
     <url-pattern>/checkCookie</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>testBean</servlet-name>
+    <url-pattern>/testBean</url-pattern>
   </servlet-mapping>
 </web-app>
