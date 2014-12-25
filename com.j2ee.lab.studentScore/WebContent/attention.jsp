@@ -1,4 +1,4 @@
-<%@ page import="listener.ExistingSessionCounter" language="java"
+<%@ page import="listener.ExistingSessionCounter, listener.SessionAttiListener" language="java"
 	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,24 +10,24 @@
 <body>
 	<div>
 		<div id="remind">
-			<%
-				out.println("<p><a href=\"login.jsp\">log out</a></p>");
-				out.println("<p>当前在线人数：");
-				out.println(ExistingSessionCounter.getSessionNo() + "</p>");
-				out.println("<p>请注意，您有挂科！</p>");
-			%>
-			<!-- <p>${ExistingSessionCounter.sessionCount}</p> -->
+			<p>
+				<a href="logOut">log out</a>
+			</p>
+			<p>
+				当前在线人数：
+				<%=ExistingSessionCounter.getSessionNo()%>
+			</p>
+			<p>
+				当前登陆人数：
+				<%=SessionAttiListener.getLogNo()%>
+			</p>
+			<p>请注意，您有挂科！</p>
 		</div>
 		<div id="stu_course_info">
 			<jsp:useBean id="courseList" type="data.CourseRecordList"
 				scope="session"></jsp:useBean>
 			<jsp:useBean id="courseRecord" class="data.CourseRecord" scope="page"></jsp:useBean>
-			<%
-				out.println("<p><a href=\"login.jsp\">log out</a></p>");
-				out.println("<p>当前在线人数：");
-				out.println(ExistingSessionCounter.getSessionNo() + "</p>");
-				out.println("<p>your course information:</p>");
-			%>
+			<p>your course information:</p>
 			<table>
 				<tr>
 					<td>序号</td>

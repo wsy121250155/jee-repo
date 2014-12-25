@@ -17,24 +17,19 @@ public class SessionAttiListener implements HttpSessionAttributeListener {
     public SessionAttiListener() {
         // TODO Auto-generated constructor stub
     }
-
+    private static int logNo=0;
+    public static int getLogNo(){
+    	return logNo;
+    }
 	/**
      * @see HttpSessionAttributeListener#attributeRemoved(HttpSessionBindingEvent)
      */
-    private String name;
-    private Object value;
     public void attributeRemoved(HttpSessionBindingEvent arg0)  { 
          // TODO Auto-generated method stub
-    	freshAttr(arg0);
-//    	System.out.println("session attribute removed!");
-    	printAttr();
-    }
-    private void freshAttr(HttpSessionBindingEvent arg0){
-    	name=arg0.getName();
-    	value=arg0.getValue();
-    }
-    private void printAttr(){
-//    	System.out.println("name:\t"+name+"\tvalue:\t"+value);
+    	String name=arg0.getName();
+    	if("sid".equals(name)){
+    		logNo--;
+    	}
     }
 
 	/**
@@ -42,9 +37,10 @@ public class SessionAttiListener implements HttpSessionAttributeListener {
      */
     public void attributeAdded(HttpSessionBindingEvent arg0)  { 
          // TODO Auto-generated method stub
-    	freshAttr(arg0);
-//    	System.out.println("session attribute added!");
-    	printAttr();
+    	String name=arg0.getName();
+    	if("sid".equals(name)){
+    		logNo++;
+    	}
     }
 
 	/**
@@ -53,9 +49,6 @@ public class SessionAttiListener implements HttpSessionAttributeListener {
     public void attributeReplaced(HttpSessionBindingEvent arg0)  { 
          // TODO Auto-generated method stub
 //    	注意：这里显示的得到的是被替换掉的，不是新的。
-    	freshAttr(arg0);
-//    	System.out.println("session attribute replaced!");
-    	printAttr();
     }
 	
 }

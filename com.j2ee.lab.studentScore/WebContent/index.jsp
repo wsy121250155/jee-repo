@@ -16,10 +16,21 @@
 	}%>
 	<div>
 		<div id="show_time">
-
 			<p>您于：</p>
 			<%=getSysTime() + "登陆本本页。"%>
 		</div>
+		<div id="start_link">
+			<br> <a href="loginServlet">start from here</a>
+		</div>
+		<br> <br>
+		<div id="no-peo-record">
+			<%!int visit_no = 0;%>
+			<%="当前已有" + (++visit_no) + "人访问过该页面。"%>
+		</div>
+	</div>
+</body>
+</html>
+<!--  
 		<div id="homework_description">
 			<h1>student score query</h1>
 			<p>course：j2ee</p>
@@ -41,14 +52,4 @@
 				</tr>
 			</table>
 		</div>
-		<div id="start_link">
-			<br> <a href="loginServlet">start from here</a>
-		</div>
-		<br> <br>
-		<div id="no-peo-record">
-			<%!int visit_no = 0;%>
-			<%="当前已有" + (++visit_no) + "人访问过该页面。"%>
-		</div>
-	</div>
-</body>
-</html>
+		-->
