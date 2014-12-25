@@ -17,39 +17,16 @@
 	<div>
 		<div id="show_time">
 			<p>您于：</p>
-			<%=getSysTime() + "登陆本本页。"%>
+			<p><%=getSysTime()%>登陆本页。
+			</p>
 		</div>
 		<div id="start_link">
-			<br> <a href="loginServlet">start from here</a>
+			<a href="loginServlet">start from here</a>
 		</div>
-		<br> <br>
 		<div id="no-peo-record">
 			<%!int visit_no = 0;%>
-			<%="当前已有" + (++visit_no) + "人访问过该页面。"%>
+			<%="当前已有 " + (++visit_no) + " 人访问过该页面。"%>
 		</div>
 	</div>
 </body>
 </html>
-<!--  
-		<div id="homework_description">
-			<h1>student score query</h1>
-			<p>course：j2ee</p>
-			<p>times: second</p>
-			<p>description: 学生登录，跟据学生的ID，查询当前课程成绩（使用文件）</p>
-			<p>并根据成绩，确定返回结果:</p>
-			<table>
-				<tr>
-					<td>有不及格课程：</td>
-					<td>警示页面</td>
-				</tr>
-				<tr>
-					<td>正常结果：</td>
-					<td>标准页面</td>
-				</tr>
-				<tr>
-					<td>未知的学生ID：</td>
-					<td>错误页面</td>
-				</tr>
-			</table>
-		</div>
-		-->

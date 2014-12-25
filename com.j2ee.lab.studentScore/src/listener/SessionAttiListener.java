@@ -1,8 +1,11 @@
 package listener;
 
 import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;
+
+import data.Peo_static;
 
 /**
  * Application Lifecycle Listener implementation class SessionAttiListener
@@ -17,10 +20,10 @@ public class SessionAttiListener implements HttpSessionAttributeListener {
     public SessionAttiListener() {
         // TODO Auto-generated constructor stub
     }
-    private static int logNo=0;
-    public static int getLogNo(){
-    	return logNo;
-    }
+//    private static int logNo=0;
+//    public static int getLogNo(){
+//    	return logNo;
+//    }
 	/**
      * @see HttpSessionAttributeListener#attributeRemoved(HttpSessionBindingEvent)
      */
@@ -28,7 +31,10 @@ public class SessionAttiListener implements HttpSessionAttributeListener {
          // TODO Auto-generated method stub
     	String name=arg0.getName();
     	if("sid".equals(name)){
-    		logNo--;
+    		HttpSession session=arg0.getSession();
+    		Peo_static ps = (Peo_static) session.getServletContext().getAttribute(
+    				"people_static");
+    		ps.log_decree();
     	}
     }
 
@@ -39,7 +45,11 @@ public class SessionAttiListener implements HttpSessionAttributeListener {
          // TODO Auto-generated method stub
     	String name=arg0.getName();
     	if("sid".equals(name)){
-    		logNo++;
+    		HttpSession session=arg0.getSession();
+    		Peo_static ps = (Peo_static) session.getServletContext().getAttribute(
+    				"people_static");
+    		ps.log_add();
+    		session.setAttribute("allPass", false);
     	}
     }
 

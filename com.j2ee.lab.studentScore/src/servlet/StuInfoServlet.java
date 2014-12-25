@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import data.CourseRecordList;
+import data.Peo_static;
 import dataService.DAOFactory;
 
 /**
@@ -53,19 +54,14 @@ public class StuInfoServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		int sid = (int) session.getAttribute("sid");
 
-		CourseRecordList crList=new CourseRecordList();
+		CourseRecordList crList = new CourseRecordList();
 		crList.setCrList(DAOFactory.getCRDAO().getCourseRecords(sid));
 		session.setAttribute("courseList", crList);
-		if (crList.isAllPass()) {
-			RequestDispatcher view = request.getRequestDispatcher("common.jsp");
-			view.forward(request, response);
-		} else {
-			RequestDispatcher view = request
-					.getRequestDispatcher("attention.jsp");
-			view.forward(request, response);
-		}
+		Peo_static ps=(Peo_static)session.getServletContext().getAttribute("people_static");
+		session.setAttribute("Peo_static", ps);
+		if (crList.isAllPass())
+			session.setAttribute("allPass", true);
+		RequestDispatcher view = request.getRequestDispatcher("common.jsp");
+		view.forward(request, response);
 	}
-
-	
-
 }

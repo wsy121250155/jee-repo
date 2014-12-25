@@ -14,3 +14,7 @@
 servlet Configeration
 
 6.注意jsp页面内进行循环时，使用pageContext.setAttribute
+
+7.对于一个bean而言，它的静态变量好像不能按照一贯的做法来用。
+
+8.<jsp:include page="logOut.jspf" />被引用的页面中中文会变成乱码，尚未解决。

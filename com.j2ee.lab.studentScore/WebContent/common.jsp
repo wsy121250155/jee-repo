@@ -1,5 +1,4 @@
-<%@ page import="data.CourseRecord,listener.ExistingSessionCounter, listener.SessionAttiListener"
-	language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,21 +9,20 @@
 </head>
 <body>
 	<div>
-		<div id="stu_course_info">
-			<p>
-				<a href="logOut">log out</a>
-			</p>
-			<p>
-				当前在线人数：
-				<%=ExistingSessionCounter.getSessionNo()%>
-			</p>
-			<p>
-				当前登陆人数：
-				<%=SessionAttiListener.getLogNo()%>
-			</p>
-			<jsp:useBean id="courseList" type="data.CourseRecordList"
-				scope="session"></jsp:useBean>
-			<jsp:useBean id="courseRecord" class="data.CourseRecord" scope="page"></jsp:useBean>
+		<jsp:include page="logOut.jspf" />
+		<div>
+			<p>当前在线人数： ${people_static.log_no}</p>
+			<p>当前登陆人数： ${people_static.online_no}</p>
+		</div>
+		<jsp:useBean id="allPass" type="java.lang.Boolean" scope="session"></jsp:useBean>
+		<%
+			if (!allPass) {
+		%>
+		<jsp:include page="attention.jspf" />
+		<%
+			}
+		%>
+		<div>
 			<p>your course information:</p>
 			<table>
 				<tr>
@@ -33,6 +31,10 @@
 					<td>课程名称</td>
 					<td>成绩</td>
 				</tr>
+				<jsp:useBean id="courseList" type="data.CourseRecordList"
+					scope="session"></jsp:useBean>
+				<jsp:useBean id="courseRecord" class="data.CourseRecord"
+					scope="page"></jsp:useBean>
 				<%
 					int i;
 					for (i = 0; i < courseList.getCrList().size(); i++) {
