@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import data.CourseRecord;
-import dataService.Cr_source_service;
+import dataService.CourseRecordDAO;
 
-public class Course_re_file implements Cr_source_service {
+public class Course_re_file implements CourseRecordDAO {
 
 	private List<CourseRecord> cr_list;
 	

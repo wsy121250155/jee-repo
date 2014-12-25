@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import data.Student;
-import dataService.Stu_source_service;
+import dataService.StudentInfoDAO;
 
-public class Student_file implements Stu_source_service {
+public class Student_file implements StudentInfoDAO {
 
 	public Student_file() {
 		String path = RootPath.get() + "/filedata/stu_info.txt";

@@ -12,3 +12,5 @@
 
 5.区别servletContext（整个应用只有一个）和servlet，他们对应的初始化参数：servletContext configeration和
 servlet Configeration
+
+6.注意jsp页面内进行循环时，使用pageContext.setAttribute

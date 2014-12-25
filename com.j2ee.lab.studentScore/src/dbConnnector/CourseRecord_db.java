@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import data.CourseRecord;
-import dataService.Cr_source_service;
+import dataService.CourseRecordDAO;
 
-public class CourseRecord_db  implements Cr_source_service{
+public class CourseRecord_db  implements CourseRecordDAO{
 		
 	public List<CourseRecord> getCourseRecords(int sid) {
 		// TODO Auto-generated method stub

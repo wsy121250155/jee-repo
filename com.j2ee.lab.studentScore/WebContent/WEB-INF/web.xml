@@ -29,14 +29,6 @@
       <param-value>21</param-value>
     </init-param>
   </servlet>
-  <servlet>
-    <servlet-name>checkCookie</servlet-name>
-    <servlet-class>servlet.CheckCookieServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>testBean</servlet-name>
-    <servlet-class>servlet.TestBeanServlet</servlet-class>
-  </servlet>
   
   <listener>
     <listener-class>listener.MyServletContextListener</listener-class>
@@ -59,13 +51,5 @@
   <servlet-mapping>
     <servlet-name>stuInfoServlet</servlet-name>
     <url-pattern>/stuInfoServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>checkCookie</servlet-name>
-    <url-pattern>/checkCookie</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>testBean</servlet-name>
-    <url-pattern>/testBean</url-pattern>
   </servlet-mapping>
 </web-app>

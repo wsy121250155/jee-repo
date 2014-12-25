@@ -1,5 +1,6 @@
 package listener;
 
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
@@ -10,6 +11,8 @@ public class ExistingSessionCounter implements HttpSessionListener {
 	public void sessionCreated(HttpSessionEvent arg0) {
 		// TODO Auto-generated method stub
 		sessionCount++;
+		HttpSession session=arg0.getSession();
+		session.setAttribute("hasLogin", false);
 	}
 
 	@Override

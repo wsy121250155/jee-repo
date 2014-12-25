@@ -4,7 +4,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import dbConnnector.Dbconnect;
+import fileConnector.RootPath;
 
 public class MyServletContextListener implements ServletContextListener{
 
@@ -19,7 +19,9 @@ public class MyServletContextListener implements ServletContextListener{
 		// TODO Auto-generated method stub
 //		Dbconnect.init();
 		ServletContext sc=arg0.getServletContext();
-		String url=sc.getInitParameter("db-source");
-		sc.setAttribute("url", "http://"+url);
+//		String url=sc.getInitParameter("db-source");
+//		sc.setAttribute("url", "http://"+url);
+		String path=sc.getRealPath("/");
+		RootPath.set(path);
 	}
 }

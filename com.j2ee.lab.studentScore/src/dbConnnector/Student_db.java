@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import data.Student;
-import dataService.Stu_source_service;
+import dataService.StudentInfoDAO;
 
-public class Student_db  implements Stu_source_service{
+public class Student_db  implements StudentInfoDAO{
 
 	
 	public Student getStudent(int sid) {
