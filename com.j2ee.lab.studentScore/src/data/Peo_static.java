@@ -13,6 +13,19 @@ public class Peo_static implements SessionBean {
 	private static final long serialVersionUID = 1L;
 	private int online_no = 0;
 	private int log_no = 0;
+	private int visite_no=0;
+	
+	public void visite_add(){
+		visite_no++;
+	}
+
+	public int getVisite_no() {
+		return visite_no;
+	}
+
+	public void setVisite_no(int visite_no) {
+		this.visite_no = visite_no;
+	}
 
 	public Peo_static() {
 	}

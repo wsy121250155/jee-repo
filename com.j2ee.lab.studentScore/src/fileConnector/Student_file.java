@@ -46,7 +46,7 @@ public class Student_file implements StudentInfoDAO {
 	public Student getStudent(int sid) {
 		// TODO Auto-generated method stub
 		for(Student stu: stu_list){
-			if(stu.getId()==sid){
+			if(stu.getSid()==sid){
 				return stu;
 			}
 		}

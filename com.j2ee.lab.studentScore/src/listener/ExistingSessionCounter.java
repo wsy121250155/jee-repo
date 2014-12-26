@@ -13,10 +13,14 @@ public class ExistingSessionCounter implements HttpSessionListener {
 	public void sessionCreated(HttpSessionEvent arg0) {
 		// TODO Auto-generated method stub
 		HttpSession session = arg0.getSession();
-		session.setAttribute("hasLogin", false);
+//		session.setAttribute("hasLogin", false);
+		session.setAttribute("user", new UserBean());
+
+		// peo statistic
 		Peo_static ps = (Peo_static) session.getServletContext().getAttribute(
 				"people_static");
 		ps.online_add();
+		ps.visite_add();
 	}
 
 	@Override
@@ -27,8 +31,4 @@ public class ExistingSessionCounter implements HttpSessionListener {
 				"people_static");
 		ps.online_decree();
 	}
-
-	// public static int getSessionNo() {
-	// return sessionCount;
-	// }
 }

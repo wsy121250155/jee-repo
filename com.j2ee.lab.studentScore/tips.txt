@@ -18,3 +18,7 @@ servlet Configeration
 7.对于一个bean而言，它的静态变量好像不能按照一贯的做法来用。
 
 8.<jsp:include page="logOut.jspf" />被引用的页面中中文会变成乱码，尚未解决。
+
+9.<jsp:useBean> 只适用于创建对象或者取得对象引用
+<jsp:getProperty> 只适用于获取对象属性并且在界面上输出，要对获得的属性进行进一步处理则不能。
+这两个动作好像真的就是完全面向表示的，而不面向逻辑。

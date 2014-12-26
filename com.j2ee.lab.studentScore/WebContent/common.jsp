@@ -14,9 +14,9 @@
 			<p>当前在线人数： ${people_static.log_no}</p>
 			<p>当前登陆人数： ${people_static.online_no}</p>
 		</div>
-		<jsp:useBean id="allPass" type="java.lang.Boolean" scope="session"></jsp:useBean>
+		<jsp:useBean id="user" type="listener.UserBean" scope="session"></jsp:useBean>
 		<%
-			if (!allPass) {
+			if (!user.allPass()) {
 		%>
 		<jsp:include page="attention.jspf" />
 		<%
@@ -31,15 +31,13 @@
 					<td>课程名称</td>
 					<td>成绩</td>
 				</tr>
-				<jsp:useBean id="courseList" type="data.CourseRecordList"
-					scope="session"></jsp:useBean>
 				<jsp:useBean id="courseRecord" class="data.CourseRecord"
 					scope="page"></jsp:useBean>
 				<%
 					int i;
-					for (i = 0; i < courseList.getCrList().size(); i++) {
+					for (i = 0; i < user.getCrList().getCrList().size(); i++) {
 						pageContext.setAttribute("courseRecord",
-								courseList.getCrList(i));
+								user.getCrList().getCrList(i));
 				%>
 				<tr>
 					<td><%=i + 1%></td>

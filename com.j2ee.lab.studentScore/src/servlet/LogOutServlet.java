@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import data.Peo_static;
+import listener.UserBean;
+
 /**
  * Servlet implementation class LogOutServlet
  */
@@ -29,8 +32,11 @@ public class LogOutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session=request.getSession();
-		session.removeAttribute("sid");
-		session.setAttribute("hasLogin", false);
+		UserBean user=(UserBean) session.getAttribute("user");
+		user.init();
+		Peo_static ps = (Peo_static) this.getServletContext().getAttribute(
+				"people_static");
+		ps.log_decree();
 		RequestDispatcher view = request
 				.getRequestDispatcher("login.jsp");
 		view.forward(request, response);

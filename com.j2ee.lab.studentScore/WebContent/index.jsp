@@ -25,7 +25,9 @@
 		</div>
 		<div>
 			<%!int visit_no = 0;%>
-			<p>当前已有<%=(++visit_no)%>人访问过该页面。</p>
+			<p>
+				当前已有<%=(++visit_no)%>人访问过该页面。
+			</p>
 		</div>
 	</div>
 </body>
