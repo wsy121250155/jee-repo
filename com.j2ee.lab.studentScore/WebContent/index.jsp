@@ -5,6 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet"
+	type="text/css">
 <script type="text/javascript" src="js/time.js"></script>
 <script type="text/javascript">
 	window.onload = function() {
@@ -15,14 +17,19 @@
 <body>
 	<div>
 		<div id="show_time">
-			<p>您于：</p>
 			<p>
-				<em id="time"></em>登陆本页。
+				您于： <em id="time"></em>登陆本页。
 			</p>
 		</div>
-		<div>
-			<a href="loginServlet">start from here</a>
+		<div class="hero-unit">
+			<h1>Welcome!</h1>
+			<p>Welcome to my homework' homepage.</p>
+			<p>
+				<a class="btn btn-primary btn-large" href="loginServlet"> Log In
+				</a>
+			</p>
 		</div>
+
 		<div>
 			<%!int visit_no = 0;%>
 			<p>

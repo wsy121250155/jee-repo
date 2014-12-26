@@ -4,50 +4,57 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet"
+	type="text/css">
 <title>Student information</title>
 </head>
 <body>
-	<div>
-		<jsp:include page="logOut.jspf" />
-		<div>
-			<p>当前在线人数： ${people_static.log_no}</p>
-			<p>当前登陆人数： ${people_static.online_no}</p>
+	<jsp:include page="headBar.jspf" />
+	<div class="container-fluid">
+		<div class="span2">
+			<div>
+				<p>当前在线人数： ${people_static.log_no}</p>
+				<p>当前登陆人数： ${people_static.online_no}</p>
+			</div>
+			<jsp:useBean id="user" type="listener.UserBean" scope="session"></jsp:useBean>
+			<%
+				if (!user.allPass()) {
+			%>
+			<jsp:include page="attention.jspf" />
+			<%
+				}
+			%>
 		</div>
-		<jsp:useBean id="user" type="listener.UserBean" scope="session"></jsp:useBean>
-		<%
-			if (!user.allPass()) {
-		%>
-		<jsp:include page="attention.jspf" />
-		<%
-			}
-		%>
-		<div>
-			<p>your course information:</p>
-			<table>
-				<tr>
-					<td>序号</td>
-					<td>课程号</td>
-					<td>课程名称</td>
-					<td>成绩</td>
-				</tr>
-				<jsp:useBean id="courseRecord" class="data.CourseRecord"
-					scope="page"></jsp:useBean>
-				<%
-					int i;
-					for (i = 0; i < user.getCrList().getCrList().size(); i++) {
-						pageContext.setAttribute("courseRecord",
-								user.getCrList().getCrList(i));
-				%>
-				<tr>
-					<td><%=i + 1%></td>
-					<td><jsp:getProperty name="courseRecord" property="cid"></jsp:getProperty></td>
-					<td><jsp:getProperty name="courseRecord" property="cname"></jsp:getProperty></td>
-					<td><jsp:getProperty name="courseRecord" property="score"></jsp:getProperty></td>
-				</tr>
-				<%
-					}
-				%>
+		<div class="span8">
+			<table class="table table-striped table-bordered table-condensed">
+				<caption>your course information:</caption>
+				<thead>
+					<tr>
+						<td>序号</td>
+						<td>课程号</td>
+						<td>课程名称</td>
+						<td>成绩</td>
+					</tr>
+				</thead>
+				<tbody>
+					<jsp:useBean id="courseRecord" class="data.CourseRecord"
+						scope="page"></jsp:useBean>
+					<%
+						int i;
+						for (i = 0; i < user.getCrList().getCrList().size(); i++) {
+							pageContext.setAttribute("courseRecord", user.getCrList()
+									.getCrList(i));
+					%>
+					<tr>
+						<td><%=i + 1%></td>
+						<td><jsp:getProperty name="courseRecord" property="cid"></jsp:getProperty></td>
+						<td><jsp:getProperty name="courseRecord" property="cname"></jsp:getProperty></td>
+						<td><jsp:getProperty name="courseRecord" property="score"></jsp:getProperty></td>
+					</tr>
+					<%
+						}
+					%>
+				</tbody>
 			</table>
 		</div>
 	</div>
