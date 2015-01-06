@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import listener.UserBean;
-import data.Peo_static;
 import data.Student;
 import dataService.DAOFactory;
 import dataService.StudentInfoDAO;

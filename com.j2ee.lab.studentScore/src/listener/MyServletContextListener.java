@@ -4,7 +4,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import data.Peo_static;
+import servlet.Peo_static;
 import dataService.DAOFactory;
 
 public class MyServletContextListener implements ServletContextListener{
