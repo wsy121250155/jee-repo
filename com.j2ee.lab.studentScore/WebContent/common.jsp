@@ -37,7 +37,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<jsp:useBean id="courseRecord" class="data.CourseRecord"
+					<jsp:useBean id="courseRecord" class="com.j2ee.ejbServer.po.CourseRecord"
 						scope="page"></jsp:useBean>
 					<%
 						int i;

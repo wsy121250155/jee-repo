@@ -1,21 +1,22 @@
-package dbConnnector;
+package com.j2ee.ejbServer.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.ejb.Stateless;
+
 import com.j2ee.ejbServer.po.Student;
+import com.j2ee.ejbServer.service.StudentInfoService;
 
-import dataService.StudentInfoDAO;
-
-public class Student_db  implements StudentInfoDAO{
-
-	
+@Stateless
+public class StudentInfo_db  implements StudentInfoService{
+	private static DaoHelper daoHelper=DaoHelperImpl.getBaseDaoInstance();
 	public Student getStudent(int sid) {
 		// TODO Auto-generated method stub
 		Student stu=null;
-		Connection connection=Dbconnect.getConnection();
+		Connection connection=daoHelper.getConnection();
 		try {
 			Statement statement=(Statement)connection.createStatement();
 			String sql="select * from students where sid="+sid;

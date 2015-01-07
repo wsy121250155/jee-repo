@@ -1,27 +1,33 @@
 package data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.j2ee.ejbServer.po.CourseRecord;
 import com.j2ee.ejbServer.po.Student;
 
-import dataService.DAOFactory;
+//import dataService.DAOFactory;
 
-public class UserBean implements Serializable{
+public class UserBean implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private boolean haslog=false;
+
+	private boolean haslog = false;
 	private Student stu;
 	private CourseRecordList crList;
-	public void init(){
+
+	public void init() {
 		haslog = false;
-		stu=null;
-		crList=null;
+		stu = null;
+		crList = null;
 	}
+
 	public CourseRecordList getCrList() {
-		if(null==crList)
+		if (null == crList)
 			try {
 				throw new Exception();
 			} catch (Exception e) {
@@ -30,23 +36,24 @@ public class UserBean implements Serializable{
 			}
 		return crList;
 	}
-	
+
 	@SuppressWarnings("finally")
-	public boolean allPass(){
-		if(null==crList){
+	public boolean allPass() {
+		if (null == crList) {
 			try {
 				throw new Exception();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				System.out.println("crList is null!");
 				e.printStackTrace();
-			}finally{
+			} finally {
 				return false;
 			}
 		}
 		return crList.isAllPass();
 	}
-	//实际上不应该在类的外部被调用到
+
+	// 实际上不应该在类的外部被调用到
 	public void setCrList(CourseRecordList crList) {
 		this.crList = crList;
 	}
@@ -55,9 +62,9 @@ public class UserBean implements Serializable{
 		return haslog;
 	}
 
-	//should not be called outside this class
+	// should not be called outside this class
 	public void setHaslog(boolean haslog) {
-		//只有在设置了stu参数时，被顺带设置，或者是inti（）中进行修改。
+		// 只有在设置了stu参数时，被顺带设置，或者是inti（）中进行修改。
 		try {
 			throw new Exception();
 		} catch (Exception e) {
@@ -67,7 +74,7 @@ public class UserBean implements Serializable{
 	}
 
 	public Student getStu() {
-		if(null==stu)
+		if (null == stu)
 			try {
 				throw new Exception();
 			} catch (Exception e) {
@@ -77,12 +84,21 @@ public class UserBean implements Serializable{
 		return stu;
 	}
 
-	public void setStu(Student stu) {
+	public void setStu(Student stu, List<CourseRecord> courseList) {
 		this.stu = stu;
-		//填充crList
-		int sid=stu.getSid();
-		crList=new CourseRecordList();
-		crList.setCrList(DAOFactory.getCRDAO().getCourseRecords(sid));
+		// 填充crList
+		// int sid = stu.getSid();
+		crList = new CourseRecordList();
+
+		// crList.setCrList(DAOFactory.getCRDAO().getCourseRecords(sid));
+		// if(null== crs){
+		// System.out.println("ejb-crs is null!");
+		// }
+
+		if (null == courseList) {
+			courseList = new ArrayList<CourseRecord>();
+		}
+		crList.setCrList(courseList);
 		haslog = true;
 	}
 }

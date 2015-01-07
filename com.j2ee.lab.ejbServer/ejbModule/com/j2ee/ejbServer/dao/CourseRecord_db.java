@@ -1,4 +1,4 @@
-package dbConnnector;
+package com.j2ee.ejbServer.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,16 +7,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
+
 import com.j2ee.ejbServer.po.CourseRecord;
+import com.j2ee.ejbServer.service.CourseRecordService;
 
-import dataService.CourseRecordDAO;
-
-public class CourseRecord_db  implements CourseRecordDAO{
-		
+@Stateless
+public class CourseRecord_db  implements CourseRecordService{
+	private static DaoHelper daoHelper=DaoHelperImpl.getBaseDaoInstance();
+	
 	public List<CourseRecord> getCourseRecords(int sid) {
 		// TODO Auto-generated method stub
 		List<CourseRecord> reList=new ArrayList<CourseRecord>();
-		Connection connection=Dbconnect.getConnection();
+		Connection connection=daoHelper.getConnection();
 		try {
 			Statement statement=(Statement)connection.createStatement();
 			String sql=
