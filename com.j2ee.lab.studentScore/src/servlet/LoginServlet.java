@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import listener.UserBean;
-import data.Student;
+import com.j2ee.ejbServer.po.Student;
+
+import data.Peo_static;
+import data.UserBean;
 import dataService.DAOFactory;
 import dataService.StudentInfoDAO;
 

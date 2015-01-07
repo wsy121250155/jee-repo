@@ -4,7 +4,8 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-import servlet.Peo_static;
+import data.Peo_static;
+import data.UserBean;
 
 public class ExistingSessionCounter implements HttpSessionListener {
 	// private static int sessionCount = 0;

@@ -12,7 +12,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import listener.UserBean;
+import data.UserBean;
 
 /**
  * Servlet Filter implementation class LogFilter

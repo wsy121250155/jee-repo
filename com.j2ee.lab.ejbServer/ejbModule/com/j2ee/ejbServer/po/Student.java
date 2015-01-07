@@ -1,12 +1,8 @@
-package data;
+package com.j2ee.ejbServer.po;
 
-import java.rmi.RemoteException;
+import java.io.Serializable;
 
-import javax.ejb.EJBException;
-import javax.ejb.SessionBean;
-import javax.ejb.SessionContext;
-
-public class Student implements SessionBean{
+public class Student implements Serializable{
 	/**
 	 * 
 	 */
@@ -50,26 +46,5 @@ public class Student implements SessionBean{
 //	}
 	public String toString(){
 		return ""+sid+"\t"+sname+"\t"+pw;
-	}
-	@Override
-	public void ejbActivate() throws EJBException, RemoteException {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void ejbPassivate() throws EJBException, RemoteException {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void ejbRemove() throws EJBException, RemoteException {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void setSessionContext(SessionContext arg0) throws EJBException,
-			RemoteException {
-		// TODO Auto-generated method stub
-		
 	}
 }

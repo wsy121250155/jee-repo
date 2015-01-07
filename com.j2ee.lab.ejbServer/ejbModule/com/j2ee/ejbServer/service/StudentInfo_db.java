@@ -1,4 +1,4 @@
-package dbConnnector;
+package com.j2ee.ejbServer.service;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,10 +7,7 @@ import java.sql.Statement;
 
 import com.j2ee.ejbServer.po.Student;
 
-import dataService.StudentInfoDAO;
-
-public class Student_db  implements StudentInfoDAO{
-
+public class StudentInfo_db  implements StudentInfoService{
 	
 	public Student getStudent(int sid) {
 		// TODO Auto-generated method stub

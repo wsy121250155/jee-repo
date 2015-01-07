@@ -1,12 +1,8 @@
 package data;
 
-import java.rmi.RemoteException;
+import java.io.Serializable;
 
-import javax.ejb.EJBException;
-import javax.ejb.SessionBean;
-import javax.ejb.SessionContext;
-
-public class Peo_static implements SessionBean {
+public class Peo_static implements Serializable {
 	/**
 	 * 
 	 */
@@ -61,30 +57,4 @@ public class Peo_static implements SessionBean {
 	public void setLog_no(int log_no) {
 		this.log_no = log_no;
 	}
-
-	@Override
-	public void ejbActivate() throws EJBException, RemoteException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void ejbPassivate() throws EJBException, RemoteException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void ejbRemove() throws EJBException, RemoteException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setSessionContext(SessionContext arg0) throws EJBException,
-			RemoteException {
-		// TODO Auto-generated method stub
-
-	}
-
 }

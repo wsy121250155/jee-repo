@@ -16,7 +16,7 @@
 				<p>当前在线人数： ${people_static.log_no}</p>
 				<p>当前登陆人数： ${people_static.online_no}</p>
 			</div>
-			<jsp:useBean id="user" type="listener.UserBean" scope="session"></jsp:useBean>
+			<jsp:useBean id="user" type="data.UserBean" scope="session"></jsp:useBean>
 			<%
 				if (!user.allPass()) {
 			%>

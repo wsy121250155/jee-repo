@@ -6,7 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import data.CourseRecord;
+import com.j2ee.ejbServer.po.CourseRecord;
+
 import dataService.CourseRecordDAO;
 
 public class Course_re_file implements CourseRecordDAO {

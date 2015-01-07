@@ -1,13 +1,11 @@
 package data;
 
-import java.rmi.RemoteException;
+import java.io.Serializable;
 import java.util.List;
 
-import javax.ejb.EJBException;
-import javax.ejb.SessionBean;
-import javax.ejb.SessionContext;
+import com.j2ee.ejbServer.po.CourseRecord;
 
-public class CourseRecordList implements SessionBean {
+public class CourseRecordList implements Serializable {
 	/**
 	 * 
 	 */
@@ -16,13 +14,15 @@ public class CourseRecordList implements SessionBean {
 
 	public CourseRecordList() {
 	}
-	public void show(){
-		for(CourseRecord cr: crList){
+
+	public void show() {
+		for (CourseRecord cr : crList) {
 			System.out.println(cr);
 		}
 	}
-	public CourseRecord getCrList(int index){
-		if(null==crList){
+
+	public CourseRecord getCrList(int index) {
+		if (null == crList) {
 			try {
 				throw new Exception();
 			} catch (Exception e) {
@@ -34,7 +34,7 @@ public class CourseRecordList implements SessionBean {
 	}
 
 	public boolean isAllPass() {
-		if(null==crList){
+		if (null == crList) {
 			try {
 				throw new Exception();
 			} catch (Exception e) {
@@ -56,30 +56,4 @@ public class CourseRecordList implements SessionBean {
 	public void setCrList(List<CourseRecord> crList) {
 		this.crList = crList;
 	}
-
-	@Override
-	public void ejbActivate() throws EJBException, RemoteException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void ejbPassivate() throws EJBException, RemoteException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void ejbRemove() throws EJBException, RemoteException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setSessionContext(SessionContext arg0) throws EJBException,
-			RemoteException {
-		// TODO Auto-generated method stub
-
-	}
-
 }

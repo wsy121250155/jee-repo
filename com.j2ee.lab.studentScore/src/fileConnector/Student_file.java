@@ -6,7 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import data.Student;
+import com.j2ee.ejbServer.po.Student;
+
 import dataService.StudentInfoDAO;
 
 public class Student_file implements StudentInfoDAO {

@@ -1,4 +1,4 @@
-package dbConnnector;
+package com.j2ee.ejbServer.service;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,9 +9,7 @@ import java.util.List;
 
 import com.j2ee.ejbServer.po.CourseRecord;
 
-import dataService.CourseRecordDAO;
-
-public class CourseRecord_db  implements CourseRecordDAO{
+public class CourseRecord_db  implements CourseRecordService{
 		
 	public List<CourseRecord> getCourseRecords(int sid) {
 		// TODO Auto-generated method stub
