@@ -42,8 +42,8 @@
   <servlet-class>servlet.LoginServlet</servlet-class>
  </servlet>
  <servlet>
-  <servlet-name>stuInfoServlet</servlet-name>
-  <servlet-class>servlet.StuInfoServlet</servlet-class>
+  <servlet-name>scoresServlet</servlet-name>
+  <servlet-class>servlet.ScoresServlet</servlet-class>
   <init-param>
    <param-name>name</param-name>
    <param-value>wsy</param-value>
@@ -57,17 +57,25 @@
   <servlet-name>logOut</servlet-name>
   <servlet-class>servlet.LogOutServlet</servlet-class>
  </servlet>
+ <servlet>
+  <servlet-name>courseList</servlet-name>
+  <servlet-class>servlet.CourseListServlet</servlet-class>
+ </servlet>
  <servlet-mapping>
   <servlet-name>loginServlet</servlet-name>
   <url-pattern>/loginServlet</url-pattern>
  </servlet-mapping>
  <servlet-mapping>
-  <servlet-name>stuInfoServlet</servlet-name>
-  <url-pattern>/stuInfoServlet</url-pattern>
+  <servlet-name>scoresServlet</servlet-name>
+  <url-pattern>/scoresServlet</url-pattern>
  </servlet-mapping>
  <servlet-mapping>
   <servlet-name>logOut</servlet-name>
   <url-pattern>/logOut</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>courseList</servlet-name>
+  <url-pattern>/courseList</url-pattern>
  </servlet-mapping>
  <session-config>
   <session-timeout>1</session-timeout>

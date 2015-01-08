@@ -1,0 +1,18 @@
+<jsp:useBean id="crList"
+						class="data.CourseList" scope="session"></jsp:useBean>
+					<jsp:useBean id="course"
+						class="com.j2ee.ejbServer.model.Course" scope="page"></jsp:useBean>
+					<%
+						int i;
+						for (i = 0; i < crList.getCourseList().size(); i++) {
+							pageContext.setAttribute("course", crList
+									.getCourse(i));
+					%>
+					<tr>
+						<td><%=i + 1%></td>
+						<td><jsp:getProperty name="course" property="cid"></jsp:getProperty></td>
+						<td><jsp:getProperty name="course" property="cname"></jsp:getProperty></td>
+					</tr>
+					<%
+						}
+					%>

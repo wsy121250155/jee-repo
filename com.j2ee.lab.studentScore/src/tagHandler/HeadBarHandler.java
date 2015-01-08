@@ -13,7 +13,7 @@ public class HeadBarHandler extends SimpleTagSupport {
 		String scoreUrl = "#";
 		String infoUrl = "#";
 		if (log) {
-			scoreUrl = "stuInfoServlet";
+			scoreUrl = "scoresServlet";
 			infoUrl = "yes";
 		}
 
@@ -21,7 +21,7 @@ public class HeadBarHandler extends SimpleTagSupport {
 		out.println("<div>");
 		out.println("<ul class=\"nav nav-pills\">");
 		out.println("<li class=\"active\"><a href=\"index.jsp\">HomePage</a></li>");
-		out.println("<li><a href=\"courseServlet\">Courses</a></li>");
+		out.println("<li><a href=\"courseList\">Courses</a></li>");
 		out.println("<li><a href=\"" + scoreUrl + "\">Scores</a></li>");
 		out.println("<li><a href=\"" + infoUrl
 				+ "\">Personal Information</a></li>");

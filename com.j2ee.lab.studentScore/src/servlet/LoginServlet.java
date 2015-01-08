@@ -76,7 +76,7 @@ public class LoginServlet extends HttpServlet {
 			Peo_static ps = (Peo_static) this.getServletContext().getAttribute(
 					"people_static");
 			ps.log_add();
-			url = "stuInfoServlet";
+			url = "scoresServlet";
 		}
 		RequestDispatcher view = request.getRequestDispatcher(url);
 		view.forward(request, response);

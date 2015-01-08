@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet"
 	type="text/css">
-<title>Student information</title>
+<title>Your scores information</title>
 </head>
 <body>
 	<component:HeadBar log="${user.haslog}" />
