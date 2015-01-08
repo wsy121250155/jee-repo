@@ -10,16 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.j2ee.ejbServer.po.CourseRecord;
-import com.j2ee.ejbServer.po.Student;
+import com.j2ee.ejbServer.model.CourseRecord;
+import com.j2ee.ejbServer.model.Student;
 import com.j2ee.ejbServer.service.CourseRecordService;
 import com.j2ee.ejbServer.service.StudentInfoService;
-//import com.j2ee.ejbServer.service.TestService;
 
 import data.Peo_static;
 import data.UserBean;
-//import dataService.DAOFactory;
-//import dataService.StudentInfoDAO;
 
 /**
  * Servlet implementation class LoginServlet

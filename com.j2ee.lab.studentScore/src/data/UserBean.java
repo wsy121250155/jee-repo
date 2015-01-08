@@ -4,10 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.j2ee.ejbServer.po.CourseRecord;
-import com.j2ee.ejbServer.po.Student;
-
-//import dataService.DAOFactory;
+import com.j2ee.ejbServer.model.CourseRecord;
+import com.j2ee.ejbServer.model.Student;
 
 public class UserBean implements Serializable {
 

@@ -39,7 +39,7 @@
 				</thead>
 				<tbody>
 					<jsp:useBean id="courseRecord"
-						class="com.j2ee.ejbServer.po.CourseRecord" scope="page"></jsp:useBean>
+						class="com.j2ee.ejbServer.model.CourseRecord" scope="page"></jsp:useBean>
 					<%
 						int i;
 						for (i = 0; i < user.getCrList().getCrList().size(); i++) {

@@ -7,14 +7,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ejb.Stateless;
+import com.j2ee.ejbServer.model.CourseRecord;
 
-import com.j2ee.ejbServer.po.CourseRecord;
-import com.j2ee.ejbServer.service.CourseRecordService;
-
-@Stateless
-public class CourseRecord_db  implements CourseRecordService{
-	private static DaoHelper daoHelper=DaoHelperImpl.getBaseDaoInstance();
+public class CourseRecordImpl implements CourseRecordDao{
+private static DaoHelper daoHelper=DaoHelperImpl.getBaseDaoInstance();
 	
 	public List<CourseRecord> getCourseRecords(int sid) {
 		// TODO Auto-generated method stub
@@ -36,5 +32,4 @@ public class CourseRecord_db  implements CourseRecordService{
 		}
 		return reList;
 	}
-
 }

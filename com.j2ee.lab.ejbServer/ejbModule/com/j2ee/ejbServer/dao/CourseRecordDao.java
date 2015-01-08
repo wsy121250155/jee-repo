@@ -1,12 +1,9 @@
-package com.j2ee.ejbServer.service;
+package com.j2ee.ejbServer.dao;
 
 import java.util.List;
 
-import javax.ejb.Remote;
-
 import com.j2ee.ejbServer.model.CourseRecord;
 
-@Remote
-public interface CourseRecordService {
+public interface CourseRecordDao {
 	public List<CourseRecord> getCourseRecords(int sid);
 }
