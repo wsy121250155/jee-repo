@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="component" uri="/WEB-INF/tlds/component.tld"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,7 +10,7 @@
 <title>Student information</title>
 </head>
 <body>
-	<jsp:include page="headBar.jspf" />
+	<component:HeadBar log="${user.haslog}" />
 	<div class="container-fluid">
 		<div class="span2">
 			<div>
@@ -37,8 +38,8 @@
 					</tr>
 				</thead>
 				<tbody>
-					<jsp:useBean id="courseRecord" class="com.j2ee.ejbServer.po.CourseRecord"
-						scope="page"></jsp:useBean>
+					<jsp:useBean id="courseRecord"
+						class="com.j2ee.ejbServer.po.CourseRecord" scope="page"></jsp:useBean>
 					<%
 						int i;
 						for (i = 0; i < user.getCrList().getCrList().size(); i++) {

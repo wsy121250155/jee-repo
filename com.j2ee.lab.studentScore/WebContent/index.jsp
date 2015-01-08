@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="component" uri="/WEB-INF/tlds/component.tld"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,11 +17,7 @@
 </head>
 <body>
 	<div>
-		<div id="show_time">
-			<p>
-				您于： <em id="time"></em>登陆本页。
-			</p>
-		</div>
+		<component:HeadBar log="${user.haslog}" />
 		<div class="hero-unit">
 			<h1>Welcome!</h1>
 			<p>Welcome to my homework' homepage.</p>
@@ -30,6 +27,11 @@
 			</p>
 		</div>
 
+		<div id="show_time">
+			<p>
+				您于： <em id="time"></em>登陆本页。
+			</p>
+		</div>
 		<div>
 			<%!int visit_no = 0;%>
 			<p>
