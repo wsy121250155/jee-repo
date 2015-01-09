@@ -10,8 +10,8 @@ public class HeadBarHandler extends SimpleTagSupport {
 	private boolean log = false;
 
 	public void doTag() throws JspException, IOException {
-		String scoreUrl = "#";
-		String infoUrl = "#";
+		String scoreUrl = "loginServlet";
+		String infoUrl = "loginServlet";
 		if (log) {
 			scoreUrl = "scoresServlet";
 			infoUrl = "yes";

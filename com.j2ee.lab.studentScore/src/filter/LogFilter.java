@@ -44,7 +44,7 @@ public class LogFilter implements Filter {
 		UserBean user = (UserBean) session.getAttribute("user");
 		if (user.isHaslog()) {
 			RequestDispatcher view = request
-					.getRequestDispatcher("stuInfoServlet");
+					.getRequestDispatcher("scoresServlet");
 			view.forward(request, response);
 		} else {
 			// pass the request along the filter chain
