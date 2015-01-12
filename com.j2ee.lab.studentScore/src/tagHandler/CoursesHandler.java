@@ -6,7 +6,7 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
-import com.j2ee.ejbServer.model.Course;
+import com.j2ee.ejbServer.po.Course;
 
 import data.CourseList;
 

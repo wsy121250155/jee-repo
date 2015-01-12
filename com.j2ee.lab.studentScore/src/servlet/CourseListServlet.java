@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.j2ee.ejbServer.model.Course;
+import com.j2ee.ejbServer.po.Course;
 import com.j2ee.ejbServer.service.CourseService;
 
 import data.CourseList;

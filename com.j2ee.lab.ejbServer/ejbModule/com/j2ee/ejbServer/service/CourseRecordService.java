@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
-import com.j2ee.ejbServer.model.CourseRecord;
+import com.j2ee.ejbServer.po.CourseRecord;
 
 @Remote
 public interface CourseRecordService {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="com.j2ee.lab.ear">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="com.j2ee.lab.JPA.jar" deploy-path="/lib" handle="module:/resource/com.j2ee.lab.JPA/com.j2ee.lab.JPA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="com.j2ee.lab.ejbServer.jar" deploy-path="/" handle="module:/resource/com.j2ee.lab.ejbServer/com.j2ee.lab.ejbServer">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="com.j2ee.lab.studentScore.war" deploy-path="/" handle="module:/resource/com.j2ee.lab.studentScore/com.j2ee.lab.studentScore">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

@@ -7,8 +7,8 @@ create table courses(
 	primary key(cid)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 create table courseRecords(
-	sid int, cid int, score int,
-	foreign key(sid) references students(sid),
-	foreign key(cid) references courses(cid),
-	primary key(sid, cid)
+	id int, cr_sid int, cr_cid int, score int,
+	foreign key(cr_sid) references students(sid),
+	foreign key(cr_cid) references courses(cid),
+	primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

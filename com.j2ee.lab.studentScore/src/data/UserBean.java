@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.j2ee.ejbServer.model.CourseRecord;
-import com.j2ee.ejbServer.model.Student;
+import com.j2ee.ejbServer.po.CourseRecord;
+import com.j2ee.ejbServer.po.Student;
 
 public class UserBean implements Serializable {
 

@@ -1,11 +1,12 @@
 use jee;
-insert into students values(153, "ÍõÄş", 123);
-insert into students values(154, "ÍõË¶·æ", 111);
+insert into students values(153, "ï¿½ï¿½ï¿½ï¿½", 123);
+insert into students values(154, "ï¿½ï¿½Ë¶ï¿½ï¿½", 111);
 insert into students values(011, "Tom", 100);
 
 insert into courses values(001, "data structure");
-insert into courses values(002, "webÓ¦ÓÃ");
+insert into courses values(002, "webÓ¦ï¿½ï¿½");
 
-insert into courseRecords values(153, 001, 99);
-insert into courseRecords values(153, 002, 98);
-insert into courseRecords values(154, 002, 100);
+insert into courseRecords values(1,153, 001, 99);
+insert into courseRecords values(2,153, 002, 98);
+insert into courseRecords values(3,154, 002, 100);
+insert into courseRecords values(4,154, 001, 59);

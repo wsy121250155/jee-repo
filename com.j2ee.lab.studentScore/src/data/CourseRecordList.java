@@ -3,7 +3,7 @@ package data;
 import java.io.Serializable;
 import java.util.List;
 
-import com.j2ee.ejbServer.model.CourseRecord;
+import com.j2ee.ejbServer.po.CourseRecord;
 
 public class CourseRecordList implements Serializable {
 	/**
